@@ -1,0 +1,163 @@
+:root {
+    /* #FFFFFF */
+    --white: hsl(0 0% 100%);
+    /* #19202D */
+    --dark-blue: hsl(219, 29%, 14%);
+    /* #48556A */
+    --gray-blue: hsl(217, 19%, 35%);
+    --gray-blue-op-25: hsl(217 19% 35% / 25%);
+    /* #733FC8 */
+    --purple: hsl(263, 55%, 52%);
+    /* #A775F1 */
+    --light-purple: hsl(264, 82%, 70%)
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    height: 100%;
+    background-color: #ECF2F8
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+.grid {
+    gap: 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 4.125rem 1.5rem;
+}
+
+.grid-item {
+    padding: 1.625rem 2rem 2rem 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 40px 60px 50px -47px var(--gray-blue-op-25);
+}
+
+.one {
+    background-color: var(--purple);
+    background-image: url('./images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top right 18%;
+}
+
+.two {
+    background-color: var(--gray-blue);
+}
+
+.three,
+.five {
+    background-color: var(--white);
+}
+
+.four {
+    background-color: var(--dark-blue);
+}
+
+.one,
+.two,
+.four {
+    color: var(--white);
+}
+
+.three,
+.five {
+    color: var(--gray-blue);
+}
+
+.summary-text {
+    font-weight: 600;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.quote-text {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    opacity: 0.7;
+}
+
+.profile-name {
+    font-size: 0.8125rem;
+}
+
+.profile-graduate {
+    font-size: 0.75rem;
+    opacity: 0.5;
+}
+
+.profile-image {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 100%;
+    margin-right: 1rem;
+}
+
+.profile-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.125rem;
+}
+
+.one .profile-image,
+.four .profile-image {
+    border: 2px solid var(--light-purple);
+}
+
+@media only screen and (min-width: 700px) {
+    .grid {
+        max-width: 768px;
+        gap: 1.875rem;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+            "one one one"
+            "two five five"
+            "three four four";
+    }
+
+    .one {
+        grid-area: one;
+    }
+
+    .two {
+        grid-area: two;
+    }
+
+    .three {
+        grid-area: three;
+    }
+
+    .four {
+        grid-area: four;
+    }
+
+    .five {
+        grid-area: five;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .grid {
+        max-width: 1110px;
+        gap: 1.875rem;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "one one two five"
+            "one one two five"
+            "three four four five"
+            "three four four five";
+    }
+}
